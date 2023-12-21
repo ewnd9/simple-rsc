@@ -150,7 +150,7 @@ serve(app, async (info) => {
 
 /** UTILS */
 
-const appDir = new URL('./app/', import.meta.url);
+const appDir = new URL('../../client/src/', import.meta.url);
 const buildDir = new URL('./build/', import.meta.url);
 
 function resolveApp(path = '') {
