@@ -1,6 +1,7 @@
 {
 	"name": "simple-rsc",
 	"version": "0.0.1",
+	"packageManager": "yarn@4.0.2",
 	"description": "A simple React Server Components implementation that you can build yourself.",
 	"main": "server/index.js",
 	"type": "module",
