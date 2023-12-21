@@ -3,11 +3,11 @@
 	"version": "0.0.1",
 	"packageManager": "yarn@4.0.2",
 	"description": "A simple React Server Components implementation that you can build yourself.",
-	"main": "packages/server/src/server.js",
+	"main": "packages/server/src/server.ts",
 	"type": "module",
 	"scripts": {
-		"start": "node packages/server/src/server.js",
-		"dev": "node packages/server/src/server.js",
+		"start": "node packages/server/src/server.ts",
+		"dev": "node --loader tsx/esm packages/server/src/server.ts",
 		"lint": "eslint '**/*.{js,jsx,ts,tsx}'",
 		"lint:fix": "eslint --fix '**/*.{js,jsx,ts,tsx}'",
 		"format": "prettier --check . --ignore-path .gitignore !package.json !pnpm-lock.yaml",
@@ -34,6 +34,7 @@
 		"eslint": "^8.37.0",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-unicorn": "^46.0.0",
-		"prettier": "^2.8.7"
+		"prettier": "^2.8.7",
+		"tsx": "^4.7.0"
 	}
 }

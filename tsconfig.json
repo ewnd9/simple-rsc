@@ -10,5 +10,9 @@
 		"noImplicitAny": false,
 		"allowSyntheticDefaultImports": true,
 		"resolveJsonModule": true
-	}
+	},
+	"include": [
+		"./packages/*/src/**/*.ts",
+		"./packages/*/src/**/*.tsx"
+	]
 }

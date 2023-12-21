@@ -40,7 +40,7 @@ app.get('/', async (c) => {
  */
 app.get('/rsc', async (c) => {
 	// Note This will raise a type error until you build with `npm run dev`
-	const Page = await import('./build/page.js');
+	const Page = await import('./build/Page.js');
 	// @ts-expect-error `Type '() => Promise<any>' is not assignable to type 'FunctionComponent<{}>'`
 	const Comp = createElement(Page.default);
 
@@ -66,7 +66,7 @@ async function build() {
 		bundle: true,
 		format: 'esm',
 		logLevel: 'error',
-		entryPoints: [resolveApp('page.jsx')],
+		entryPoints: [resolveApp('Page.tsx')],
 		outdir: resolveBuild(),
 		// avoid bundling npm packages for server-side components
 		packages: 'external',
@@ -96,17 +96,23 @@ async function build() {
 	});
 
 	/** Build client components */
-	const { outputFiles } = await esbuild({
+	// @ts-expect-error
+	const { outputFiles, errors } = await esbuild({
 		bundle: true,
 		format: 'esm',
 		logLevel: 'error',
-		entryPoints: [resolveApp('_client.jsx'), ...clientEntryPoints],
+		entryPoints: [resolveApp('_client.ts'), ...clientEntryPoints],
 		outdir: resolveBuild(),
 		splitting: true,
 		write: false
 	});
 
-	outputFiles.forEach(async (file) => {
+	if (errors.length > 0) {
+		console.error(errors);
+		return;
+	}
+
+	outputFiles!.forEach(async (file) => {
 		// Parse file export names
 		const [, exports] = parse(file.text);
 		let newContents = file.text;
@@ -161,4 +167,4 @@ function resolveBuild(path = '') {
 	return fileURLToPath(new URL(path, buildDir));
 }
 
-const reactComponentRegex = /\.jsx$/;
+const reactComponentRegex = /\.tsx$/;
