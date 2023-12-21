@@ -15,3 +15,10 @@ $ yarn install
 ```bash
 $ yarn dev # http://localhost:3000/
 ```
+
+## Roadmap
+
+- [ ] finish watching 4h stream 🙃
+- [x] packages split
+- [x] TypeScript
+- [ ] inspect https://github.com/facebook/react/blob/c5b9375767e2c4102d7e5559d383523736f1c902/fixtures/flight/server/global.js#L174-L177 (mentioned at https://youtu.be/Fctw7WjmxpU?si=ndKJ035eblpvtetc&t=3212)
