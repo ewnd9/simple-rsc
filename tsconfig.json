@@ -9,7 +9,8 @@
 		"strict": true,
 		"noImplicitAny": false,
 		"allowSyntheticDefaultImports": true,
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"allowImportingTsExtensions": true,
 	},
 	"include": [
 		"./packages/*/src/**/*.ts",

@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { getAll } from '../../data/db';
-import Like from './Like';
+import Like from './Like.tsx';
 
 async function Albums() {
   const albums = await getAll();
