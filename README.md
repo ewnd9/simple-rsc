@@ -3,6 +3,7 @@
 - [`bholmesdev/simple-rsc` (upstream)](https://github.com/bholmesdev/simple-rsc)
 - [React server components from scratch! (20m)](https://www.youtube.com/watch?v=MaebEqhZR84)
 - [⚛️ Dan Abramov explores React Server Components with us! (4h)](https://www.youtube.com/watch?v=Fctw7WjmxpU)
+  - [`4c95873` version from video](https://github.com/bholmesdev/simple-rsc/tree/4c95873f3f2988a93d0e16f08f9fa4d6969fefb0)
 
 ## Install
 
