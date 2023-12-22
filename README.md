@@ -23,3 +23,17 @@ $ yarn dev # http://localhost:3000/
 - [x] packages split
 - [x] TypeScript
 - [ ] inspect https://github.com/facebook/react/blob/c5b9375767e2c4102d7e5559d383523736f1c902/fixtures/flight/server/global.js#L174-L177 (mentioned at https://youtu.be/Fctw7WjmxpU?si=ndKJ035eblpvtetc&t=3212)
+
+### `react/fixtures/flight`
+
+```sh
+$ git clone git@github.com:facebook/react.git
+$ cd react
+$ yarn install
+$ (cd scripts/release && yarn install)
+$ yarn download-build-for-head
+$ (cd fixtures/flight && yarn install)
+$ (cd fixtures/flight && yarn dev)
+$ (cd fixtures/flight && yarn build)
+$ (cd fixtures/flight && yarn start)
+```
